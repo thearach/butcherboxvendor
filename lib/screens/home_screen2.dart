@@ -1,7 +1,10 @@
 import 'package:butcherbox_vendor/butch_widgets/butch_button.dart';
 import 'package:butcherbox_vendor/butch_widgets/location_drop.dart';
 import 'package:butcherbox_vendor/models/ordersmodel.dart';
+import 'package:butcherbox_vendor/screens/allorders.dart';
 import 'package:butcherbox_vendor/screens/home.dart';
+import 'package:butcherbox_vendor/screens/productpage.dart';
+import 'package:butcherbox_vendor/screens/store_screen.dart';
 import 'package:butcherbox_vendor/services/database.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,27 +19,14 @@ class HomeScreen2 extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen2> {
-  final List<String> items = <String>[
-    'Morgan Street Ojodu',
-    'Agidingbi',
-    'Ogba',
-    'B and T Market Ojokoro',
-    'Ojodu Berger'
-  ];
-
-  String dropDownValue = 'Morgan Street Ojodu';
-  String get vendorLocation => dropDownValue;
-  // Future<void> _createOrder(BuildContext context) async {
   @override
   Widget build(BuildContext context) {
-    //final database = Provider.of<Database>(context, listen: false);
-    //database.readOrders();
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.green[200],
         title: Text(
-          'Butcher Box',
+          'Vendor',
           textAlign: TextAlign.center,
           style: TextStyle(color: Colors.green[900]),
         ),
@@ -60,88 +50,119 @@ class _HomeScreenState extends State<HomeScreen2> {
                   image: AssetImage('images/butchboxbgimagedark.png'),
                 ),
               ),
-              padding: EdgeInsets.all(32.0),
-              child: Container(
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
-                child: Column(
-                  children: [
-                    SizedBox(height: 30.0),
-                    Text(
-                      'Find a Butcher Box near you',
-                      style: TextStyle(
-                          fontSize: 24.0,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.green[900]),
-                    ),
-                    SizedBox(height: 30.0),
-                    Text(
-                      'Select a location from the list below',
-                      style: TextStyle(
-                          fontSize: 16.0, fontWeight: FontWeight.w500),
-                    ),
-                    SizedBox(height: 20.0),
-                    Padding(
-                      padding: const EdgeInsets.all(16.0),
-                      child: Container(
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                            color: Colors.green[200],
-                            borderRadius: BorderRadius.circular(10.0),
-                            border: Border.all(
-                                color: Colors.green[900], width: 2.0)),
-                        child: DropdownButton<String>(
-                          onChanged: (String newValue) {
-                            setState(() {
-                              dropDownValue = newValue;
-                            });
-                          },
-                          value: dropDownValue,
-                          items: items.map<DropdownMenuItem<String>>(
-                            (String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            },
-                          ).toList(),
-                        ),
+              child: Column(
+                children: [
+                  SizedBox(height: 10.0),
+                  InkWell(
+                    child: Container(
+                      padding: EdgeInsets.only(bottom: 10.0),
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage('images/combopack.jpg'))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Orders',
+                            style: TextStyle(
+                                fontSize: 24.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Icon(
+                            Icons.list_alt,
+                            size: 25.0,
+                            color: Colors.green,
+                          ),
+                          SizedBox(width: 30.0)
+                        ],
                       ),
                     ),
-                    SizedBox(
-                      height: 40.0,
+                    // onTap: () {
+                    //   Navigator.push(
+                    //       context,
+                    //       new MaterialPageRoute(
+                    //           builder: (context) => StoreScreen()));
+                    // },
+                    onTap: () {
+                      Navigator.of(context, rootNavigator: true).push(
+                          MaterialPageRoute(builder: (context) => AllOrders()));
+                    },
+                  ),
+                  SizedBox(height: 20.0),
+                  InkWell(
+                    child: Container(
+                      padding: EdgeInsets.only(bottom: 10.0),
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage('images/minicombopack.jpg'))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Inventory',
+                            style: TextStyle(
+                                fontSize: 24.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Icon(
+                            Icons.notes,
+                            size: 25.0,
+                            color: Colors.green[600],
+                          ),
+                          SizedBox(width: 20.0)
+                        ],
+                      ),
                     ),
-                    Text(
-                      'Pickup Location is \n $dropDownValue',
-                      textAlign: TextAlign.center,
-                      style:
-                          TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                  ),
+                  SizedBox(height: 20.0),
+                  InkWell(
+                    child: Container(
+                      padding: EdgeInsets.only(bottom: 10.0),
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.fill,
+                              image: AssetImage('images/greenlogoback.png'))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Contact',
+                            style: TextStyle(
+                                fontSize: 24.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Icon(
+                            Icons.phone,
+                            size: 25.0,
+                            color: Colors.white,
+                          ),
+                          SizedBox(width: 30.0)
+                        ],
+                      ),
                     ),
-                    SizedBox(height: 200.0),
-                    ButcherButtons(
-                      buttonText: 'Start Shopping',
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) =>
-                                    Home(location: dropDownValue)));
-                      },
-                      /* Navigator.push(
-                            context,
-                            new MaterialPageRoute(
-                                builder: (context) => StoreScreen()));*/
-                      //return CupertinoTabView();
-                      /*return CupertinoTabView(
-                          routes: <String, WidgetBuilder>{
-                            '/store': (context) => StoreScreen()
-                          },
-                          builder: (context) => StoreScreen(),
-                        );*/
-                    ),
-                  ],
-                ),
+                  ),
+                  SizedBox(height: 200.0),
+                  ButcherButtons(
+                    buttonText: 'Start Shopping',
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          new MaterialPageRoute(
+                              builder: (context) => StoreScreen()));
+                    },
+                  ),
+                ],
               ),
             ),
           ),

@@ -16,11 +16,9 @@ class CupertinoNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoTabScaffold(
-      tabBar: CupertinoTabBar(items: [
-        _buildItem(TabItem.Store),
-        // _buildItem(TabItem.Cart),
-        _buildItem(TabItem.Account)
-      ], onTap: (index) => onSelectTab(TabItem.values[index])),
+      tabBar: CupertinoTabBar(
+          items: [_buildItem(TabItem.Home), _buildItem(TabItem.Account)],
+          onTap: (index) => onSelectTab(TabItem.values[index])),
       tabBuilder: (context, index) {
         final item = TabItem.values[index];
         return CupertinoTabView(

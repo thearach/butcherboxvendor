@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-enum TabItem { Store, Account }
+enum TabItem { Home, Account }
 
 class TabItemData {
   const TabItemData({@required this.title, @required this.icon});
@@ -8,7 +8,7 @@ class TabItemData {
   final IconData icon;
 
   static const Map<TabItem, TabItemData> allItems = {
-    TabItem.Store: TabItemData(title: 'Store', icon: Icons.shopping_basket),
+    TabItem.Home: TabItemData(title: 'Home', icon: Icons.home),
     // TabItem.Cart: TabItemData(title: 'Cart', icon: Icons.shopping_cart),
     TabItem.Account: TabItemData(title: 'Account', icon: Icons.person),
   };

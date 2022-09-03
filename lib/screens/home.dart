@@ -1,11 +1,7 @@
 import 'package:butcherbox_vendor/butch_widgets/cupertino_nav.dart';
 import 'package:butcherbox_vendor/butch_widgets/tab_items.dart';
-import 'package:butcherbox_vendor/models/products.dart';
 import 'package:butcherbox_vendor/screens/account_screen.dart';
-import 'package:butcherbox_vendor/screens/store_screen.dart';
-import 'package:butcherbox_vendor/screens/thecart.dart';
-import 'package:butcherbox_vendor/screens/theshop.dart';
-import 'package:butcherbox_vendor/screens/thestore.dart';
+import 'package:butcherbox_vendor/screens/home_screen2.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -19,12 +15,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   // List<Products> _cart = [];
   String get vendorLocation => widget.location;
-  TabItem _currentTab = TabItem.Store;
+  TabItem _currentTab = TabItem.Home;
 
   Map<TabItem, WidgetBuilder> get widgetBuilders {
     return {
-      TabItem.Store: (_) => TheShop(location: vendorLocation),
-      //TabItem.Cart: (_) => Cart(_cart),
+      //TabItem.Store: (_) => TheShop(location: vendorLocation),
+      TabItem.Home: (_) => HomeScreen2(),
       TabItem.Account: (_) => AccountScreen(),
     };
   }
