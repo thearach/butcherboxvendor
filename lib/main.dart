@@ -56,7 +56,7 @@ class MainApp extends StatelessWidget {
           '/store': (context) => StoreScreen(),
           //'/cart': (context) => Cart(_cart, sum),
           //'/account': (context) => AccountScreen(),
-          //'/orders': (context) => Orders(),
+          '/orders': (context) => Orders(),
           //'/accountinfo': (context) => AccountInfo(),
           //'/locations': (context) => Locations(),
         },

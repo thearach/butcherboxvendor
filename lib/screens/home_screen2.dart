@@ -2,6 +2,7 @@ import 'package:butcherbox_vendor/butch_widgets/butch_button.dart';
 import 'package:butcherbox_vendor/butch_widgets/location_drop.dart';
 import 'package:butcherbox_vendor/models/ordersmodel.dart';
 import 'package:butcherbox_vendor/screens/allorders.dart';
+import 'package:butcherbox_vendor/screens/contact.dart';
 import 'package:butcherbox_vendor/screens/home.dart';
 import 'package:butcherbox_vendor/screens/productpage.dart';
 import 'package:butcherbox_vendor/screens/store_screen.dart';
@@ -92,36 +93,40 @@ class _HomeScreenState extends State<HomeScreen2> {
                           MaterialPageRoute(builder: (context) => AllOrders()));
                     },
                   ),
-                  SizedBox(height: 20.0),
-                  InkWell(
-                    child: Container(
-                      padding: EdgeInsets.only(bottom: 10.0),
-                      height: 100.0,
-                      decoration: BoxDecoration(
-                          image: DecorationImage(
-                              fit: BoxFit.cover,
-                              image: AssetImage('images/minicombopack.jpg'))),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        crossAxisAlignment: CrossAxisAlignment.end,
-                        children: [
-                          Text(
-                            'Inventory',
-                            style: TextStyle(
-                                fontSize: 24.0,
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold),
-                          ),
-                          Icon(
-                            Icons.notes,
-                            size: 25.0,
-                            color: Colors.green[600],
-                          ),
-                          SizedBox(width: 20.0)
-                        ],
-                      ),
-                    ),
-                  ),
+                  //SizedBox(height: 20.0),
+                  // InkWell(
+                  //   child: Container(
+                  //     padding: EdgeInsets.only(bottom: 10.0),
+                  //     height: 100.0,
+                  //     decoration: BoxDecoration(
+                  //         image: DecorationImage(
+                  //             fit: BoxFit.cover,
+                  //             image: AssetImage('images/minicombopack.jpg'))),
+                  //     child: Row(
+                  //       mainAxisAlignment: MainAxisAlignment.end,
+                  //       crossAxisAlignment: CrossAxisAlignment.end,
+                  //       children: [
+                  //         Text(
+                  //           'Inventory',
+                  //           style: TextStyle(
+                  //               fontSize: 24.0,
+                  //               color: Colors.white,
+                  //               fontWeight: FontWeight.bold),
+                  //         ),
+                  //         Icon(
+                  //           Icons.notes,
+                  //           size: 25.0,
+                  //           color: Colors.green[600],
+                  //         ),
+                  //         SizedBox(width: 20.0),
+                  //       ],
+                  //     ),
+                  //   ),
+                  //   onTap: () {
+                  //     Navigator.of(context, rootNavigator: true).push(
+                  //         MaterialPageRoute(builder: (context) => AllOrders()));
+                  //   },
+                  // ),
                   SizedBox(height: 20.0),
                   InkWell(
                     child: Container(
@@ -151,17 +156,11 @@ class _HomeScreenState extends State<HomeScreen2> {
                         ],
                       ),
                     ),
-                  ),
-                  SizedBox(height: 200.0),
-                  ButcherButtons(
-                    buttonText: 'Start Shopping',
-                    onPressed: () {
-                      Navigator.push(
-                          context,
-                          new MaterialPageRoute(
-                              builder: (context) => StoreScreen()));
+                    onTap: () {
+                      Navigator.of(context, rootNavigator: true).push(
+                          MaterialPageRoute(builder: (context) => Contact()));
                     },
-                  ),
+                  )
                 ],
               ),
             ),
