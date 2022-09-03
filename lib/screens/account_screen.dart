@@ -64,32 +64,6 @@ class AccountScreen extends StatelessWidget {
                   subOption: 'Set Account preferences here',
                   iconPlace: Icons.account_circle),
               SizedBox(height: 5),
-              // AccountOptions(
-              //     enter: () {
-              //       Navigator.of(context, rootNavigator: true)
-              //           .pushNamed('/locations');
-              //     },
-              //     headOption: 'Locations',
-              //     subOption: 'Add and remove addresses',
-              //     iconPlace: Icons.location_on_rounded),
-              // SizedBox(height: 5),
-              AccountOptions(
-                  enter: () {
-                    Navigator.of(context, rootNavigator: true)
-                        .pushNamed('/orders');
-                    // Navigator.of(context).push(
-                    //   MaterialPageRoute(
-                    //     builder: (BuildContext context) => Provider<Database>(
-                    //       builder: (context, child) => Orders(),
-                    //       create: (context) => FireStoreDatabase(uid: user.uid),
-                    //     ),
-                    //   ),
-                    // );
-                  },
-                  headOption: 'Orders',
-                  subOption: 'List of all your orders',
-                  iconPlace: Icons.my_library_books),
-              SizedBox(height: 5),
               AccountOptions(
                   enter: () => _confirmSignOut(context),
                   headOption: 'Logout',
