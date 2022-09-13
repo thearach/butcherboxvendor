@@ -81,11 +81,11 @@ class SigningIn extends StatelessWidget {
       top: true,
       child: Container(
         decoration: BoxDecoration(
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage('images/backg.jpg'),
-          ),
-        ),
+            // image: DecorationImage(
+            //   fit: BoxFit.cover,
+            //   image: AssetImage('images/backg.jpg'),
+            // ),
+            color: Colors.white10),
         child: Scaffold(
           backgroundColor: Colors.transparent,
           body: _buildContent(context),
@@ -110,7 +110,7 @@ class SigningIn extends StatelessWidget {
                 //mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
                   // SizedBox(height: 10.0),
-                  SizedBox(height: 25.0, child: _buildHeader()),
+                  SizedBox(height: 20.0, child: _buildHeader()),
                   /*Text(
                               'SIGN IN',
                               style: TextStyle(
@@ -163,9 +163,11 @@ class SigningIn extends StatelessWidget {
       );
     }
     return Text(
-      'SIGN IN',
+      'VENDOR SIGN IN',
       style: TextStyle(
-          color: Colors.white, fontSize: 24.0, fontWeight: FontWeight.bold),
+          color: Colors.green[600],
+          fontSize: 24.0,
+          fontWeight: FontWeight.bold),
     );
   }
 }

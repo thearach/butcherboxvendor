@@ -93,40 +93,40 @@ class _HomeScreenState extends State<HomeScreen2> {
                           MaterialPageRoute(builder: (context) => AllOrders()));
                     },
                   ),
-                  //SizedBox(height: 20.0),
-                  // InkWell(
-                  //   child: Container(
-                  //     padding: EdgeInsets.only(bottom: 10.0),
-                  //     height: 100.0,
-                  //     decoration: BoxDecoration(
-                  //         image: DecorationImage(
-                  //             fit: BoxFit.cover,
-                  //             image: AssetImage('images/minicombopack.jpg'))),
-                  //     child: Row(
-                  //       mainAxisAlignment: MainAxisAlignment.end,
-                  //       crossAxisAlignment: CrossAxisAlignment.end,
-                  //       children: [
-                  //         Text(
-                  //           'Inventory',
-                  //           style: TextStyle(
-                  //               fontSize: 24.0,
-                  //               color: Colors.white,
-                  //               fontWeight: FontWeight.bold),
-                  //         ),
-                  //         Icon(
-                  //           Icons.notes,
-                  //           size: 25.0,
-                  //           color: Colors.green[600],
-                  //         ),
-                  //         SizedBox(width: 20.0),
-                  //       ],
-                  //     ),
-                  //   ),
-                  //   onTap: () {
-                  //     Navigator.of(context, rootNavigator: true).push(
-                  //         MaterialPageRoute(builder: (context) => AllOrders()));
-                  //   },
-                  // ),
+                  SizedBox(height: 20.0),
+                  InkWell(
+                    child: Container(
+                      padding: EdgeInsets.only(bottom: 10.0),
+                      height: 100.0,
+                      decoration: BoxDecoration(
+                          image: DecorationImage(
+                              fit: BoxFit.cover,
+                              image: AssetImage('images/minicombopack.jpg'))),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: [
+                          Text(
+                            'Inventory',
+                            style: TextStyle(
+                                fontSize: 24.0,
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Icon(
+                            Icons.notes,
+                            size: 25.0,
+                            color: Colors.green[600],
+                          ),
+                          SizedBox(width: 20.0),
+                        ],
+                      ),
+                    ),
+                    // onTap: () {
+                    //   Navigator.of(context, rootNavigator: true).push(
+                    //       MaterialPageRoute(builder: (context) => AllOrders()));
+                    // },
+                  ),
                   SizedBox(height: 20.0),
                   InkWell(
                     child: Container(
@@ -135,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen2> {
                       decoration: BoxDecoration(
                           image: DecorationImage(
                               fit: BoxFit.fill,
-                              image: AssetImage('images/greenlogoback.png'))),
+                              image: AssetImage('images/vendorcontact.png'))),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
                         crossAxisAlignment: CrossAxisAlignment.end,

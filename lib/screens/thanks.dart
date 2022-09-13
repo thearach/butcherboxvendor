@@ -1,11 +1,8 @@
 import 'package:butcherbox_vendor/butch_widgets/butch_button.dart';
 import 'package:butcherbox_vendor/logic/StoreLogic.dart';
-import 'package:butcherbox_vendor/screens/home.dart';
-import 'package:butcherbox_vendor/screens/home_screen.dart';
+import 'package:butcherbox_vendor/screens/home_screen2.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import 'home_screen2.dart';
 
 class Thanks extends StatelessWidget {
   @override

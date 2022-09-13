@@ -5,7 +5,6 @@ import 'package:butcherbox_vendor/butch_widgets/butch_button.dart';
 import 'package:butcherbox_vendor/butch_widgets/product_cards.dart';
 import 'package:butcherbox_vendor/models/ordersmodel.dart';
 import 'package:butcherbox_vendor/models/products.dart';
-import 'package:butcherbox_vendor/screens/home_screen.dart';
 import 'package:butcherbox_vendor/screens/signing_in.dart';
 import 'package:butcherbox_vendor/screens/thanks.dart';
 import 'package:butcherbox_vendor/services/database.dart';

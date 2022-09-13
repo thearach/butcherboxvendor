@@ -1,8 +1,8 @@
 import 'package:butcherbox_vendor/butch_widgets/account_options.dart';
 import 'package:butcherbox_vendor/butch_widgets/showAlertDialog.dart';
 import 'package:butcherbox_vendor/screens/home.dart';
+import 'package:butcherbox_vendor/screens/landing_page.dart';
 import 'package:butcherbox_vendor/screens/orders.dart';
-import 'package:butcherbox_vendor/screens/sign_in_page.dart';
 import 'package:butcherbox_vendor/services/auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +18,7 @@ class AccountScreen extends StatelessWidget {
       //     MaterialPageRoute(builder: (BuildContext context) => SignInPage()),
       //     (route) => false);
       Navigator.of(context, rootNavigator: true).pushReplacement(
-          MaterialPageRoute(builder: (context) => new SignInPage()));
+          MaterialPageRoute(builder: (context) => new LandingPage()));
       //onSignOut();
     } on FirebaseAuthException catch (e) {
       print(e.message);

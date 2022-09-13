@@ -7,7 +7,6 @@ import 'package:butcherbox_vendor/screens/home.dart';
 import 'package:butcherbox_vendor/screens/landing_page.dart';
 //import 'package:butcherbox_vendor/screens/locations.dart';
 import 'package:butcherbox_vendor/screens/orders.dart';
-import 'package:butcherbox_vendor/screens/sign_in_page.dart';
 import 'package:butcherbox_vendor/screens/signing_in.dart';
 import 'package:butcherbox_vendor/screens/store_screen.dart';
 //import 'package:butcherbox_vendor/screens/thecart.dart';
@@ -23,7 +22,7 @@ import 'package:provider/provider.dart';
   runApp(MainApp());
 }*/
 
-Future<void> main() async {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp(MainApp());
@@ -51,7 +50,6 @@ class MainApp extends StatelessWidget {
         title: 'Butcher Box Vendor',
         initialRoute: '/',
         routes: {
-          '/sign': (context) => SignInPage(),
           '/': (context) => LandingPage(),
           '/store': (context) => StoreScreen(),
           //'/cart': (context) => Cart(_cart, sum),
